@@ -21,8 +21,8 @@
 #define SHAREMIND_EMULATOR_PROTOCOLS_TERNARY_H
 
 #include <type_traits>
-#include "ShareVector.h"
-#include "ValueTraits.h"
+#include <sharemind/ShareVector.h>
+#include <sharemind/ValueTraits.h>
 
 
 namespace sharemind {
@@ -35,10 +35,10 @@ public: /* Methods: */
 
     template <typename T, typename U>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<U> & param1,
-           const share_vec<T> & param2,
-           const share_vec<T> & param3,
-           share_vec<T> & result)
+    invoke(const ShareVec<U> & param1,
+           const ShareVec<T> & param2,
+           const ShareVec<T> & param3,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() ||
                 param1.size() != param3.size() ||

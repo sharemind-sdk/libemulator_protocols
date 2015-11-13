@@ -21,9 +21,9 @@
 #define SHAREMIND_EMULATOR_PROTOCOLS_BINARY_H
 
 #include <type_traits>
-#include "ShareVector.h"
-#include "ValueTraits.h"
-#include "VmVector.h"
+#include <sharemind/ShareVector.h>
+#include <sharemind/ValueTraits.h>
+#include <sharemind/VmVector.h>
 
 
 namespace sharemind {
@@ -36,9 +36,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -59,9 +59,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -82,9 +82,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -105,9 +105,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -128,9 +128,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -148,9 +148,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const immutable_vm_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ImmutableVmVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() > param2.size() || param1.size() != result.size())
             return false;
@@ -176,9 +176,9 @@ public: /* Methods: */
 
     template <typename T, typename U>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<U> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<U> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -199,9 +199,9 @@ public: /* Methods: */
 
     template <typename T, typename U>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<U> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<U> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -222,9 +222,9 @@ public: /* Methods: */
 
     template <typename T, typename U>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<U> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<U> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -245,9 +245,9 @@ public: /* Methods: */
 
     template <typename T, typename U>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<U> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<U> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -268,9 +268,9 @@ public: /* Methods: */
 
     template <typename T, typename U>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<U> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<U> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -291,9 +291,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -314,9 +314,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -337,9 +337,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -352,9 +352,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const immutable_vm_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ImmutableVmVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() > param2.size() || param1.size() != result.size())
             return false;
@@ -375,9 +375,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;
@@ -395,9 +395,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const immutable_vm_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ImmutableVmVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() > param2.size() || param1.size() != result.size())
             return false;
@@ -423,9 +423,9 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(const share_vec<T> & param1,
-           const share_vec<T> & param2,
-           share_vec<T> & result)
+    invoke(const ShareVec<T> & param1,
+           const ShareVec<T> & param2,
+           ShareVec<T> & result)
     {
         if (param1.size() != param2.size() || param1.size() != result.size())
             return false;

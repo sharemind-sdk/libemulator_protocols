@@ -21,8 +21,8 @@
 #define SHAREMIND_EMULATOR_PROTOCOLS_NULLARY_H
 
 #include <type_traits>
-#include "ShareVector.h"
-#include "ValueTraits.h"
+#include <sharemind/ShareVector.h>
+#include <sharemind/ValueTraits.h>
 
 
 namespace sharemind {
@@ -37,7 +37,7 @@ public: /* Methods: */
 
     template <typename T>
     typename std::enable_if<is_any_value_tag<T>::value, bool>::type
-    invoke(share_vec<T>& result) {
+    invoke(ShareVec<T>& result) {
         result.randomize(m_pdpi.rng());
         return true;
     }

@@ -17,7 +17,7 @@
 # For further information, please contact us at sharemind@cyber.ee.
 #
 
-SET(PACKAGE_VERSION "@SHAREMIND_LIBEMULATORPROTOCOLS_VERSION@")
+SET(PACKAGE_VERSION "@SharemindLibEmulatorProtocols_VERSION@")
 IF(NOT SharemindLibEmulatorProtocols_QUIET)
     MESSAGE(STATUS "Sharemind Emulator Protocols library version: ${PACKAGE_VERSION}")
 ENDIF()

@@ -42,15 +42,13 @@ INSTALL(FILES ${SharemindLibEmulatorProtocols_HEADERS}
 
 
 # Install CMake files:
-SharemindNewUniqueList(SharemindLibEmulatorProtocols_INSTALL_LINK_LIBRARIES)
-SharemindNewUniqueList(SharemindLibEmulatorProtocols_INSTALL_INCLUDE_DIRS
-    "${CMAKE_INSTALL_PREFIX}/include"
-    ${SharemindPdkHeaders_INCLUDE_DIRS}
+SharemindCreateCMakeFindFiles(
+    INCLUDE_DIRS
+        "${CMAKE_INSTALL_PREFIX}/include"
+        ${SharemindPdkHeaders_INCLUDE_DIRS}
+    DEFINITIONS
+        ${SharemindPdkHeaders_DEFINITIONS}
 )
-SharemindNewUniqueList(SharemindLibEmulatorProtocols_INSTALL_DEFINITIONS
-    ${SharemindPdkHeaders_DEFINITIONS}
-)
-SharemindUseCMakeFindFiles()
 
 
 # Packaging:

@@ -28,7 +28,7 @@ FIND_PACKAGE(SharemindCMakeHelpers 1.2 REQUIRED)
 SharemindSetProjectVersion()
 
 
-FIND_PACKAGE(SharemindPdkHeaders REQUIRED)
+FIND_PACKAGE(SharemindPdkHeaders 0.2.0 REQUIRED)
 
 
 # Headers:
@@ -58,7 +58,7 @@ SharemindAddComponentPackage("dev"
     DESCRIPTION "Sharemind Emulator protocols development headers"
     DEB_SECTION "libdevel"
     DEB_DEPENDS
-        "libsharemind-pdkheaders-dev (>= 0.1.0)"
+        "libsharemind-pdkheaders-dev (>= 0.2.0)"
         "libstdc++-dev"
 )
 SharemindPackagingFinalize()

@@ -23,29 +23,30 @@ PROJECT(SharemindLibEmulatorProtocols VERSION 0.1.2 LANGUAGES CXX)
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/config.local" OPTIONAL)
 INCLUDE("${CMAKE_CURRENT_BINARY_DIR}/config.local" OPTIONAL)
 
-FIND_PACKAGE(SharemindCMakeHelpers 1.3 REQUIRED)
+FIND_PACKAGE(SharemindCMakeHelpers 1.6 REQUIRED)
 
 
-FIND_PACKAGE(SharemindPdkHeaders 0.2.0 REQUIRED)
+FIND_PACKAGE(SharemindPdkHeaders 0.5.0 REQUIRED)
 
 
-# Headers:
+# LibEmulatorProtocols:
 FILE(GLOB_RECURSE SharemindLibEmulatorProtocols_HEADERS
      "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h")
 ADD_CUSTOM_TARGET("include_SharemindLibEmulatorProtocols_HEADERS_in_IDE"
                   SOURCES ${SharemindLibEmulatorProtocols_HEADERS})
+SharemindAddInterfaceLibrary(LibEmulatorProtocols)
+TARGET_INCLUDE_DIRECTORIES(LibEmulatorProtocols
+    INTERFACE
+        # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src> # TODO
+        $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>
+    )
+TARGET_LINK_LIBRARIES(LibEmulatorProtocols INTERFACE Sharemind::PdkHeaders)
 INSTALL(FILES ${SharemindLibEmulatorProtocols_HEADERS}
         DESTINATION "include/sharemind/libemulator_protocols"
         COMPONENT "dev")
-
-
-# Install CMake files:
-SharemindCreateCMakeFindFiles(
-    INCLUDE_DIRS
-        "${CMAKE_INSTALL_PREFIX}/include"
-        ${SharemindPdkHeaders_INCLUDE_DIRS}
-    DEFINITIONS
-        ${SharemindPdkHeaders_DEFINITIONS}
+SharemindCreateCMakeFindFilesForTarget(LibEmulatorProtocols
+    DEPENDENCIES
+        "SharemindPdkHeaders 0.5.0"
 )
 
 
@@ -56,7 +57,7 @@ SharemindAddComponentPackage("dev"
     DESCRIPTION "Sharemind Emulator protocols development headers"
     DEB_SECTION "libdevel"
     DEB_DEPENDS
-        "libsharemind-pdkheaders-dev (>= 0.2.0)"
+        "libsharemind-pdkheaders-dev (>= 0.5.0)"
         "libstdc++-dev"
 )
 SharemindPackagingFinalize()

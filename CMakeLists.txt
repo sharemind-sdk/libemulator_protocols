@@ -32,9 +32,8 @@ FIND_PACKAGE(SharemindPdkHeaders 0.5.0 REQUIRED)
 # LibEmulatorProtocols:
 FILE(GLOB_RECURSE SharemindLibEmulatorProtocols_HEADERS
      "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h")
-ADD_CUSTOM_TARGET("include_SharemindLibEmulatorProtocols_HEADERS_in_IDE"
-                  SOURCES ${SharemindLibEmulatorProtocols_HEADERS})
-SharemindAddInterfaceLibrary(LibEmulatorProtocols)
+SharemindAddInterfaceLibrary(LibEmulatorProtocols
+    EXPOSE_FILES ${SharemindLibEmulatorProtocols_HEADERS})
 TARGET_INCLUDE_DIRECTORIES(LibEmulatorProtocols
     INTERFACE
         # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src> # TODO

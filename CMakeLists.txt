@@ -37,7 +37,7 @@ SharemindAddInterfaceLibrary(LibEmulatorProtocols
 TARGET_INCLUDE_DIRECTORIES(LibEmulatorProtocols
     INTERFACE
         # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src> # TODO
-        $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>
+        $<INSTALL_INTERFACE:include>
     )
 TARGET_LINK_LIBRARIES(LibEmulatorProtocols INTERFACE Sharemind::PdkHeaders)
 INSTALL(FILES ${SharemindLibEmulatorProtocols_HEADERS}

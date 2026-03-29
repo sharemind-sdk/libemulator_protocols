@@ -45,7 +45,7 @@ INSTALL(FILES ${SharemindLibEmulatorProtocols_HEADERS}
         COMPONENT "dev")
 SharemindCreateCMakeFindFilesForTarget(LibEmulatorProtocols
     DEPENDENCIES
-        "SharemindPdkHeaders 0.6.0"
+        "SharemindPdkHeaders 0.7.0"
 )
 
 
@@ -56,7 +56,7 @@ SharemindAddComponentPackage("dev"
     DESCRIPTION "Sharemind Emulator protocols development headers"
     DEB_SECTION "libdevel"
     DEB_DEPENDS
-        "libsharemind-pdkheaders-dev (>= 0.6.0)"
+        "libsharemind-pdkheaders-dev (>= 0.7.0)"
         "libstdc++-dev"
 )
 SharemindPackagingFinalize()

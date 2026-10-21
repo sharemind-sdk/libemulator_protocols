@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 Cybernetica
+# Copyright (C) Cybernetica
 #
 # Research/Commercial License Usage
 # Licensees holding a valid Research License or Commercial License
@@ -18,15 +18,15 @@
 #
 
 CMAKE_MINIMUM_REQUIRED(VERSION 3.18)
-PROJECT(SharemindLibEmulatorProtocols VERSION 0.3.0 LANGUAGES CXX)
+PROJECT(SharemindLibEmulatorProtocols VERSION 1.7.0 LANGUAGES CXX)
 
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/config.local" OPTIONAL)
 INCLUDE("${CMAKE_CURRENT_BINARY_DIR}/config.local" OPTIONAL)
 
-FIND_PACKAGE(SharemindCMakeHelpers 1.6 REQUIRED)
+FIND_PACKAGE(SharemindCMakeHelpers 1.8 REQUIRED)
 
 
-FIND_PACKAGE(SharemindPdkHeaders 0.6.0 REQUIRED)
+FIND_PACKAGE(SharemindPdkHeaders 0.7.0 REQUIRED)
 
 
 # LibEmulatorProtocols:
